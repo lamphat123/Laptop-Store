@@ -7,10 +7,9 @@ const path = require("path");
 // methodOverride = require("method-override");
 
 const port = 8080;
-const db = require("./config/db/index");
 
-//Connect to DB
-// db.connect();
+const db = require("./config/db/index");
+db.connect();
 
 const route = require("./router/index");
 
@@ -30,7 +29,7 @@ app.set("views", path.join(__dirname, "app/view"));
 // const expressLayouts = require("express-ejs-layouts");
 // app.use(expressLayouts);
 
-// Routes init
+// Routes in
 route(app);
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
